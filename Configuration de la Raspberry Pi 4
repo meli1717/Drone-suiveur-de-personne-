@@ -1,1 +1,29 @@
+ Configuration de la Raspberry Pi 4
+  
+ 1_ Accéder a l’interface graphique de la Raspberry Pi
+
+Pour configurer et mettre à jour la carte Raspberry pi 4 on l’affiche sur un écran mais par manque de moyens (ne disposent pas d’un écran) j’ai exploitée mon Pc.
+
+Pour cela j’ai utilisée un câble USB de type C et un câble Ethernet (RJ45), et pour les logiciels j’ai téléchargée et utilisée PuTTy et VNC Viewer
+
+Pour ce faire on brancher la raspberry pi 4 au pc en utilisant le câble USB et le câble RJ45 ensuite on ouvre le logiciel PuTTy et sur la case « Host Name (or IP adress) » 
+on écrit « raspberrypi.local » et on choisi le type de connexion SSH 
+
+Part la suite un terminal s’ouvre et on tape Pi comme nom d’utilisateur et raspberry comme mot de passe
+
+Maintenant on a accès au terminal de la Raspberry Pi en version lite
+
+*on tape « sudo raspi-config » pour activer l’interface du raspberry 
+*on sélectionne « interfacing options » 
+*puis « VNC »
+*et on clique sur « oui » pour l’activer puis on sort de la fenêtre PuTTy.
+*Pour finir on ouvre VNC et on tape « raspberrypi.local »
+  *il demande une authentifications ou faut mettre Pi comme nom d’utilisateur et raspberry comme mot de passe 
+  *Et on a enfin accès a l’écran de la raspberry Pi
+ 
+  2_ Configuration et mise a jour de la Raspberry Pi :
+  
+ Pour la configuration de la Raspberry Pi on utilise le terminal et on tape la commende « ifconfig »
+
+ Et pour mettre a jour la Raspberry Pi on utilise la commende « sudo apt upgrade »
 
