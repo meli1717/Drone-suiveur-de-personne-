@@ -23,7 +23,7 @@ Maintenant on a accès au terminal de la Raspberry Pi en version lite
  
   2_ Configuration et mise a jour de la Raspberry Pi :
   
- Pour la configuration de la Raspberry Pi on utilise le terminal et on tape la commende « ifconfig »
+Pour la configuration de la Raspberry Pi on utilise le terminal et on tape la commende « ifconfig »
 
- Et pour mettre a jour la Raspberry Pi on utilise la commende « sudo apt upgrade »
+Et pour mettre a jour la Raspberry Pi on utilise la commende « sudo apt upgrade »
 
