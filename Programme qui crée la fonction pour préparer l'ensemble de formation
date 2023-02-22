@@ -1,0 +1,36 @@
+
+"getImagesWithID(path)"
+
+Cette fonction prend le chemin absolu vers la base de données d'images comme argument d'entrée et renvoie un tuple de 2 listes, l'une contenant les
+visages détectés et l'autre contenant l'étiquette correspondante pour ce visage.
+
+Par exemple, si le ième index dans la liste des visages représente le 5e individu dans la base de données, alors le ième emplacement correspondant dans la
+liste des étiquettes a une valeur égale à 5.
+_ On a créer un dossier « reconnaissance» ou on a stocker le fichier .yml
+_ On a écrire le programme suivant qu’on nommera ‘trainer.py’ qui convertie les visages du jeu de données en fichier .yml
+/////////////////////////////////////////////////////////////////////////
+import cv2,os
+import numpy as np
+
+from PIL import Image
+recognizer=cv2.face.LBPHFaceRecognizer_create()
+path="photos"
+def getImagesWithID(path) :
+  imagePaths=[os.path.join(path,f) for f in os.listdir(path)]
+  faces=[]
+  IDs=[]
+  for imagePath in imagePaths :
+    faceImg=Image.open(imagePath).convert("L");
+    faceNp=np.array(faceImg,"uint8")
+    ID=int(os.path.split(imagePath) [-1].split(".")[1])
+    faces.append(faceNp)
+    print (ID)
+    IDs.append(ID)
+    cv2.imshow("training",faceNp)
+    cv2.waitKey(10)
+  return IDs,faces
+IDs,faces=getImagesWithID(path)
+recognizer.train(faces,np.array(IDs))
+recognizer.save("reconnaissance/trainingData.yml")
+cv2.destroyAllWindows()
+////////////////////////////////////////////////////////////////////////////
