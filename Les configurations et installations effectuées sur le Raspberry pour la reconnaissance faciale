@@ -28,3 +28,14 @@ dev
 
 _Pour supporter gtk3 :
 $sudo apt-get install libgtk-3-dev
+
+_Par ailleurs, j'ai installée OpenCV via un github et créé un dossier. Voici les commandes utilisées :
+$sudo apt-get install git
+$git clone https://github.com/opencv/opencv.git
+$mkdir build
+$cd build
+
+_Enfin, vous avons effecté la configuration avec les commandes cidessous :
+$cmake ../
+$make
+$sudo make install
